@@ -1,1 +1,11 @@
 /*Pokedex App */
+body {
+  background-color: #ff7f50;
+  font-weight: 400;
+  font-family:lato;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 25px;
+  color: #282828;
+  display:grid;
+}
