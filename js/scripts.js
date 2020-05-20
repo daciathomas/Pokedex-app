@@ -13,7 +13,7 @@ var pokemonList = [
   },
   {
     name: 'Caterpie',
-    height: 1. 00,
+    height: 1.00,
     types: ['bug'],
     category: ['worm'],
   },
@@ -22,6 +22,13 @@ var pokemonList = [
     height: 6.07,
     types: ['grass','poison'],
     category: ['seed'],
-  },
+  }
   ];
   console.log(pokemonList)
+
+  for (var i = 0; i < pokemonList.length; i++) {
+   document.write('<h2>' + pokemonList[i].name + '</h2>' + 'height: ' + pokemonList[i].height)
+  if (pokemonList[i].height > 6.0) {
+   document.write(' Wow, that\'s big!')
+  }
+}
