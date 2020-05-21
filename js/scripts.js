@@ -24,11 +24,9 @@ var pokemonList = [
     category: ['seed'],
   }
   ];
-  console.log(pokemonList)
 
-  for (var i = 0; i < pokemonList.length; i++) {
-   document.write('<h2>' + pokemonList[i].name + '</h2>' + 'height: ' + pokemonList[i].height)
-  if (pokemonList[i].height > 6.0) {
-   document.write(' Wow, that\'s big!')
-  }
-}
+//  for (var i = 0; i < pokemonList.length; i++) {
+//   document.write('<h2>' + pokemonList[i].name + '</h2>' + 'height: ' + pokemonList[i].height)
+  pokemonList.forEach(function(creature) {
+  console.log(creature.name + ' height: ' + creature.height);
+});
