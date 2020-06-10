@@ -58,7 +58,8 @@ pokemonList.appendChild(listItem);
 return { //return all previous function so that it's available outside IIFE
   add: add,
   getAll: getAll,
-
+  //addListIem function added to return object so that it's available outside the IIFE
+  addListItem: addListItem
 };
 
 })();
