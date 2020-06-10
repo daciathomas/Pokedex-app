@@ -28,14 +28,14 @@ var pokemonList = [
   }
 ];
 
-  //add a single pokemon attributeto the pokemonList array,
-  function add (pokemon) {
+//add a single pokemon attributeto the pokemonList array,
+function add (pokemon) {
     pokemonList.push(pokemon);
   }
 
-  // return the array value of Pokemon being pushed by the 'add() function'
-  function getAll() {
-    return pokemonList;
+// return the array value of Pokemon being pushed by the 'add() function'
+function getAll() {
+  return pokemonList;
   }
 
 
@@ -60,6 +60,8 @@ var pokemonList = document.querySelector('.pokemon-List');
   var listItem = document.createElement('li');
   //create a button element and set innerText
   var button = document.createElement('button');
-
+  button.innerText =  pokemon.name;
+  //add a class button using classList
+  button.classList.add('pokemon-name');
 
 });
