@@ -36,7 +36,12 @@ function add (pokemon) {
 // return the array value of Pokemon being pushed by the 'add() function'
 function getAll() {
   return pokemonList;
-  }
+}
+// Function to show details of each Pokemon
+function showDetails(pokemon) {
+  console.log(pokemon.name = pokemon.height + pokemon.types + pokemon.category)
+  alert(pokemon.name = pokemon.height + pokemon.types + pokemon.category)
+}
 
 // function to add list for each pokemon
 function addListeItem(pokemon){
@@ -53,13 +58,15 @@ button.classList.add('pokemon-name');
 listItem.appendChild(button);
 //append the listItem to ul as its child
 pokemonList.appendChild(listItem);
-
+button.EventLitener('click', function(event){
+  showDetails(pokemon);
 }
 return { //return all previous function so that it's available outside IIFE
   add: add,
   getAll: getAll,
   //addListIem function added to return object so that it's available outside the IIFE
-  addListItem: addListItem
+  addListItem: addListItem,
+  showDetails: showDetails
 };
 
 })();
@@ -71,8 +78,8 @@ console.log(pokemonRepository.getAll());
 
 //empty for EAch loop block
 pokemonRepository.getAll().forEach(function(pokemon){
+});
 
-
-
+pokemonRepository.addListItem(pokemon);
 
 });
