@@ -1,3 +1,4 @@
+
 // wrapping pokemonList array in IIFE in order to directly access from the outside
 var pokemonRepository = (function () {
 var pokemonList = [
@@ -37,18 +38,23 @@ var pokemonList = [
     return pokemonList;
   }
 
-  return {
-    add: add,
-    getAll: getAll
- };
-})();
-console.log(pokemonRepository.getAll ());
 
+  return { //return all previous function so that it's available outside IIFE
+    add: add,
+    getAll: getAll,
+
+    };
+
+})();
+
+console.log(pokemonRepository.getAll ());
 var newPokemon = {name:'Metapod', height: 2.04, types: ['bug'], category: ['cocoon'] };
 pokemonRepository.add(newPokemon);
-
 console.log(pokemonRepository.getAll());
 
+//empty for EAch loop block
 pokemonRepository.getAll().forEach(function(pokemon){
-  document.write(pokemon.name + ' height: ' + pokemon.height);
+  // create a variable for the forEach loop then  assign it the ul element
+  var pokemonList = document.querySelector('.pokemon-List');
+
 });
