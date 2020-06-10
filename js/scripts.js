@@ -38,6 +38,8 @@ function getAll() {
   return pokemonList;
   }
 
+// function to add list for each pokemon
+  function addListeItem(pokemon){
 
   return { //return all previous function so that it's available outside IIFE
     add: add,
@@ -68,6 +70,7 @@ listItem.appendChild(button);
 //append the listItem to ul as its child
 pokemonList.appendChild(listItem);
 
+}
 
 
 
