@@ -54,14 +54,21 @@ console.log(pokemonRepository.getAll());
 
 //empty for EAch loop block
 pokemonRepository.getAll().forEach(function(pokemon){
-  // create a variable for the forEach loop then  assign it the ul element
+// create a variable for the forEach loop then  assign it the ul element
 var pokemonList = document.querySelector('.pokemon-List');
-  //create a li element
-  var listItem = document.createElement('li');
-  //create a button element and set innerText
-  var button = document.createElement('button');
-  button.innerText =  pokemon.name;
-  //add a class button using classList
-  button.classList.add('pokemon-name');
+//create a li element
+var listItem = document.createElement('li');
+//create a button element and set innerText
+var button = document.createElement('button');
+button.innerText =  pokemon.name;
+//add a class button using classList
+button.classList.add('pokemon-name');
+//append the button to list as its child
+listItem.appendChild(button);
+//append the listItem to ul as its child
+pokemonList.appendChild(listItem);
+
+
+
 
 });
