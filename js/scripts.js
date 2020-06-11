@@ -37,31 +37,13 @@ function add (pokemon) {
 function getAll() {
   return pokemonList;
 }
+
 // Function to show details of each Pokemon
 function showDetails(pokemon) {
-  console.log(pokemon.name = pokemon.height + pokemon.types + pokemon.category)
-  alert(pokemon.name = pokemon.height + pokemon.types + pokemon.category)
+  console.log(pokemon)
 }
-
-// function to add list for each pokemon
-function addListeItem(pokemon){
-// create a variable for the forEach loop then  assign it the ul element
-var pokemonList = document.querySelector('.pokemon-List');
-//create a li element
-var listItem = document.createElement('li');
-//create a button element and set innerText
-var button = document.createElement('button');
-button.innerText =  pokemon.name;
-//add a class button using classList
-button.classList.add('pokemon-name');
-//append the button to list as its child
-listItem.appendChild(button);
-//append the listItem to ul as its child
-pokemonList.appendChild(listItem);
-button.EventLitener('click', function(event){
-  showDetails(pokemon);
-}
-return { //return all previous function so that it's available outside IIFE
+ //return all previous function so that it's available outside IIFE
+return {
   add: add,
   getAll: getAll,
   //addListIem function added to return object so that it's available outside the IIFE
@@ -69,17 +51,41 @@ return { //return all previous function so that it's available outside IIFE
   showDetails: showDetails
 };
 
+
+// function to add list for each pokemon
+function addListItem(pokemon ={}){
+// create a variable for the forEach loop then  assign it the ul element
+var $pokemonList = document.querySelector('.pokemon-List');
+//create a li element
+var listItem = document.createElement('li');
+//create a button element and set innerText
+var button = document.createElement('button');
+button.innerText =  pokemon.name;
+//add a class button using classList
+button.classList.add('my-class');
+//append the listItem to ul as its child
+$pokemonList.appendChild(listItem);
+//append the button to list as its child
+listItem.appendChild(button);
+
+$button.addEventListener('click', function(event){
+  showDetails(pokemon);
+});
+}
+
+
+
 })();
 
+
 console.log(pokemonRepository.getAll ());
+
 var newPokemon = {name:'Metapod', height: 2.04, types: ['bug'], category: ['cocoon'] };
 pokemonRepository.add(newPokemon);
+
 console.log(pokemonRepository.getAll());
-
-//empty for EAch loop block
+//creates list of pokemon with pokemon's name on the button
 pokemonRepository.getAll().forEach(function(pokemon){
-});
-
-pokemonRepository.addListItem(pokemon);
+  pokemonRepository.addListItem(pokemon);
 
 });
