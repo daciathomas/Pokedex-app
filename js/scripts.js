@@ -57,9 +57,9 @@ var $listItem = document.createElement('li');
 var $button = document.createElement('button');
 $button.innerText =  pokemon.name;
 //append the button to list as its child
-$listItem.appendChild($button);
-//append the listItem to ul as its child
 $pokemonList.appendChild(listItem);
+//append the listItem to ul as its child
+$listItem.appendChild($button);
 //add a class button using classList
 $button.classList.add('my-class');
 
@@ -78,7 +78,6 @@ showDetails: showDetails
 
 
 })();
-
 
 console.log(pokemonRepository.getAll ());
 
