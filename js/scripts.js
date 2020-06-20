@@ -43,8 +43,6 @@ function showDetails(pokemon) {
   console.log(pokemon)
 }
 
-
-
 // function to add list for each pokemon
 function addListItem(pokemon){
 console.log(pokemon)
@@ -57,7 +55,7 @@ var $listItem = document.createElement('li');
 var $button = document.createElement('button');
 $button.innerText =  pokemon.name;
 //append the button to list as its child
-$pokemonList.appendChild(listItem);
+$pokemonList.appendChild($listItem);
 //append the listItem to ul as its child
 $listItem.appendChild($button);
 //add a class button using classList
