@@ -4,57 +4,53 @@
   padding: 20px
   }
 
-h1 {}
+
 body {
   background-image: url("img/pokemon.svg");
   background-repeat:no-repeat;
-  background-color: #fff;
+  background-color: #c73d32;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.4;
   text-align: center;
   font-size: 25px;
-  color: #282828;
+  color: #fff;
   display: flex;
   flex-direction: column;
 }
 
 .pokemon-List {
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  padding: 5px;
   list-style-type: none;
-  padding: 10px;
-  width: 25%;
 }
 
-pokemon-List li {
+.pokemon-List li {
   margin: 10px;
 }
 
-.button {
+
+
+.my-class: hover,
+.my-class: focus {
+  cursor: pointer;
+
+}
+
+.my-class{
+  background-color: #6f372d;
+  color: #fff;
+  font-size: 25px;
+  border: 10px;
   border: black;
   display: inline-block;
-  font-family: inherit;
-  background-color: #6bbe30;
-  color: white;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  transition-duration: 0.2s;
-  transition-property: opacity;
-}
-
-
-
-.button:hover,
-.button:focus {
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.my-class{
-  background-color: #ff7f50;
-  font-size: 50px;
-  border: 10px;
+  height: 200px;
+  width: 200px;
 }
 
 .page-footer{
