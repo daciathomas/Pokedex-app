@@ -2,7 +2,11 @@
 // wrapping pokemonList array in IIFE in order to directly access from the outside
 var pokemonRepository = (function () {
 var pokemonList = [ ];
+var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150?
 
+
+  }
+}
 //add a single pokemon attribute to the pokemonList array,
 function add (pokemon) {
     pokemonList.push(pokemon);
@@ -40,6 +44,10 @@ $button.addEventListener('click', function(event){
   showDetails(pokemon);
 });
 }
+//Add loadlist funstion as a return key that uses fetch
+function loadList() {
+  return fetch(apiUrl).then(function (response) {
+  
 //return all previous function so that it's available outside IIFE
 return {
 add: add,
