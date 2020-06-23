@@ -65,7 +65,13 @@ function loadDetails(item) {
   return fetch (url). then (function (response0 {
     return response.json();
   }). then function (details {
-  }))
+  // Add details of the item
+  item.image.url = details.sprites.front_default;
+  item.height = details.height;
+  item.types = details.types;
+}).catch(function (e) {
+  console.error(e);
+});
 }
 //return all previous function so that it's available outside IIFE
 return {
