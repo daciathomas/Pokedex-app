@@ -102,7 +102,7 @@ pokemonRepository.add(newPokemon); */
 
 console.log(pokemonRepository.getAll());
 //creates list of pokemon with pokemon's name on the button
-pokemonRepository.loadList .then (function () {
+pokemonRepository.loadList().then (function () {
 pokemonRepository.getAll().forEach(function(pokemon){
   pokemonRepository.addListItem(pokemon);
   });
