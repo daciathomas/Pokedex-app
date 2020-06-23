@@ -36,8 +36,8 @@ $pokemonList.appendChild($listItem);
 $listItem.appendChild($button);
 //add a class button using classList
 $button.classList.add('my-class');
-
-$button.addEventListener('click', function(event){
+//creates an event listener when the button is clicked
+$button.addEventListener('click', function (event){
   showDetails(pokemon);
 });
 }
@@ -45,7 +45,7 @@ $button.addEventListener('click', function(event){
 function loadList() {
   return fetch(apiUrl).then(function (response) {
   return response.json();
-//If the Get is completedis resolved, .then is run return a JSON response
+//If the promise isresolved, .then function passed through parametere
 }).then (function (json){
   json.results.forEach(function (item) {
     var pokemon = {
@@ -59,12 +59,13 @@ function loadList() {
   console.error(e);
 })
 }
+
 //Add loadDetails function with Pokemon object as a parameter
 function loadDetails(item) {
   var url = item.detailsUrl;
-  return fetch (url). then (function (response0 {
+  return fetch (url). then(function (response) {
     return response.json();
-  }). then function (details {
+  }).then (function (details) {
   // Add details of the item
   item.image.url = details.sprites.front_default;
   item.height = details.height;
@@ -73,26 +74,37 @@ function loadDetails(item) {
   console.error(e);
 });
 }
+// function to return Pokedex object Array
+function catchAll () {
+  return pokemonList;
+}
+//function to console.log pokemon details
+function showDetails(item) {
+  pokemonRepository.loadDetails(item).then(function () {
+    console.log(item);
+  });
+}
 //return all previous function so that it's available outside IIFE
 return {
 add: add,
 getAll: getAll,
-//addListIem function added to return object so that it's available outside the IIFE
 addListItem: addListItem,
+loadList: loadList,
+loadDetails: loadDetails,
 showDetails: showDetails
 };
-
-
 })();
 
 console.log(pokemonRepository.getAll ());
-
+/*
 var newPokemon = {name:'Metapod', height: 2.04, types: ['bug'], category: ['cocoon'] };
-pokemonRepository.add(newPokemon);
+pokemonRepository.add(newPokemon); */
 
 console.log(pokemonRepository.getAll());
 //creates list of pokemon with pokemon's name on the button
+pokemonRepository.loadList .then (function () {
 pokemonRepository.getAll().forEach(function(pokemon){
   pokemonRepository.addListItem(pokemon);
+  });
 
 });
