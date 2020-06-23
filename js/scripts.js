@@ -41,7 +41,7 @@ $button.addEventListener('click', function(event){
   showDetails(pokemon);
 });
 }
-//Add loadlist funstion as a return key that uses fetch
+//Add loadlist function as a return key that uses fetch
 function loadList() {
   return fetch(apiUrl).then(function (response) {
   return response.json();
@@ -59,7 +59,14 @@ function loadList() {
   console.error(e);
 })
 }
-
+//Add loadDetails function with Pokemon object as a parameter
+function loadDetails(item) {
+  var url = item.detailsUrl;
+  return fetch (url). then (function (response0 {
+    return response.json();
+  }). then function (details {
+  }))
+}
 //return all previous function so that it's available outside IIFE
 return {
 add: add,
