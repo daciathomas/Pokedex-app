@@ -98,9 +98,9 @@ showDetails: showDetails
 console.log(pokemonRepository.getAll ());
 /*
 var newPokemon = {name:'Metapod', height: 2.04, types: ['bug'], category: ['cocoon'] };
-pokemonRepository.add(newPokemon); */
+pokemonRepository.add(newPokemon);
 
-console.log(pokemonRepository.getAll());
+console.log(pokemonRepository.getAll()); */
 //creates list of pokemon with pokemon's name on the button
 pokemonRepository.loadList().then (function () {
 pokemonRepository.getAll().forEach(function(pokemon){
